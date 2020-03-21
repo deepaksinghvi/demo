@@ -1,21 +1,15 @@
-{
-  "taskDefinition": {
-    "family": "demo-repo",
-    "containerDefinitions": [
-    {
-      "name": "demo-repo",
-      "image": "622267634686.dkr.ecr.us-east-2.amazonaws.com/demorepo:latest",
-      "cpu": 100,
-      "portMappings": [
-      {
-        "protocol": "tcp",
-        "containerPort": 80,
-        "hostPort": 80
-      }
-      ],
-      "memory": 128,
-      "essential": true
-    }
-    ]
-  }
-}
+version: 0.2
+phases:
+  pre-build:
+    commands:
+      - echo "Starting the build"
+    build:
+      commands:
+      - mvn clean package
+  post-build:
+    commands:
+      - echo "Build completed"
+      - mv target/demo-0.0.1-SNAPSHOT.jar demo.jar
+artificats:
+  files:
+    - deploy/**/*
