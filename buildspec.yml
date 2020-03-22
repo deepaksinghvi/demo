@@ -3,12 +3,12 @@ phases:
   pre_build:
     commands:
       - echo "Starting the build"
-    build:
-      commands:
-      - mvn install
+  build:
+    commands:
+    - mvn install
   post_build:
     commands:
       - echo "Build completed"
 artifacts:
   files:
-    - buildspec.yml
+    - target/demo-0.0.1-SNAPSHOT.jar
