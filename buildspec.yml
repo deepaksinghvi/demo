@@ -5,11 +5,10 @@ phases:
       - echo "Starting the build"
     build:
       commands:
-      - mvn clean package
+      - mvn package
   post_build:
     commands:
       - echo "Build completed"
-      - mv target/demo-0.0.1-SNAPSHOT.jar demo.jar
 artificats:
   files:
-    - demo.jar
+    - target/demo-0.0.1-SNAPSHOT.jar
