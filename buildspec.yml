@@ -9,7 +9,6 @@ phases:
   post_build:
     commands:
       - echo "Build completed"
-      - ls ./target/demo-0.0.1-SNAPSHOT.jar
 artifacts:
   files:
-    - ./target/demo-0.0.1-SNAPSHOT.jar
+    - buildspec.yml
