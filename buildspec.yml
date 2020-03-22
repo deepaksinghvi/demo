@@ -1,15 +1,15 @@
 version: 0.2
 phases:
-  pre-build:
+  pre_build:
     commands:
       - echo "Starting the build"
     build:
       commands:
       - mvn clean package
-  post-build:
+  post_build:
     commands:
       - echo "Build completed"
       - mv target/demo-0.0.1-SNAPSHOT.jar demo.jar
 artificats:
   files:
-    - deploy/**/*
+    - demo.jar
