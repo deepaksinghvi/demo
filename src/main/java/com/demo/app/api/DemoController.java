@@ -28,6 +28,6 @@ public class DemoController {
   @RequestMapping(value = "/myeahlth", method = RequestMethod.GET)
   public ResponseEntity myhealth(){
     log.info("This is my Demo Health Check ....");
-    return new ResponseEntity("health ok ", HttpStatus.OK);
+    return new ResponseEntity("My health is ok and my health fine ", HttpStatus.OK);
   }
 }
